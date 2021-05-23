@@ -1,7 +1,9 @@
-::ng-deep .mat-accent .mat-slider-track-fill,
+ ::ng-deep {
+.mat-accent .mat-slider-track-fill,
 .mat-accent .mat-slider-thumb,
 .mat-accent .mat-slider-thumb-label {
     background-color: #663399 !important;
+}
 }
 
 ::ng-deep .mat-accent .mat-slider-thumb {
