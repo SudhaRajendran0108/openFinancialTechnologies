@@ -1,0 +1,58 @@
+.font-Montserrat {
+    font-family: 'Montserrat-Medium'!important;
+}
+
+.custom-shadow {
+    box-shadow: 0px 4px 7px #00000029;
+    border: 0.01px solid #0000001a;
+}
+
+.custom-img-blob-sm {
+    left: -10%;
+}
+
+.custom-lightgrey {
+    color: #777777;
+}
+
+.font-weight-bold {
+    font-weight: 700!important
+}
+
+.cbr_primary_bg {
+    background-color: #ffffff!important
+}
+
+.border-radius-5 {
+    border-radius: 10px;
+}
+
+.border-emi {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.custom-img-circle {
+    left: 1%;
+    top: -25%;
+}
+
+.custom-img-sol_wave_bg {
+    left: -5%;
+}
+
+.horizontal-line {
+    width: 236px;
+    height: 8px;
+    background: #000000 0% 0% no-repeat padding-box;
+    border-radius: 13px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.custom-grey {
+    color: #808080
+}

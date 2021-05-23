@@ -1,0 +1,342 @@
+<main #homeContainerRef (resized)="onResized($event)" class="h100p w100p position-relaitve">
+    <div #scrollRef class="scrollRef h100p w100p position-relative" (scroll)="scrollHandler($event)">
+        <div class="d-flex justify-content-start w100p position-absolute"
+            [style.height.px]="_templateHeight['homeContentHeight']" style="z-index: -1;">
+            <div #blobSmallRef class="position-relative d-flex align-items-center w-25">
+                <img src="../../../assets/png/blob-small.png" alt="" class="position-relative custom-img-blob-sm"
+                    [style.height.px]="_templateHeight['blobSmallTemplate']"
+                    [style.width.px]="_templateHeight['blobSmallTemplate']">
+            </div>
+            <div class="position-relaitve d-flex align-items-end w-25">
+                <img src="../../../assets/png/accounting_dots.png" alt=""
+                    class="position-relative custom-img-accounting-dots"
+                    [style.height.px]="_templateHeight['accountDotsHeight']"
+                    [style.width.px]="_templateHeight['blobSmallTemplate']">
+            </div>
+            <div #circleRef class="position-relaitve justify-content-start w-75"
+                [style.height.px]="_templateHeight['circleWidth']">
+                <img src="../../../assets/png/circle.png" alt="" class="position-relative custom-img-circle"
+                    [style.height.px]="_templateHeight['circleWidth']"
+                    [style.width.px]="_templateHeight['circleWidth']">
+            </div>
+        </div>
+        <div class="d-flex justify-content-start w100p position-relaitve"
+            [style.height.px]="_templateHeight['homeContentHeight']" style="z-index: -1;">
+            <div id="navbar" class="w100p" [style.height.px]="_templateHeight['navIntialHeight']">
+                <div class="d-flex justify-content-between align-items-center h100p custom-pl-5 custom-pr-3">
+                    <div #circleRef class="justify-content-start">
+                        <img src="../../../assets/png/logo.png" alt="" class="custom-img-circle"
+                            [style.height.px]="_templateHeight['logoWidth']"
+                            [style.width.px]="_templateHeight['logoWidth']">
+                    </div>
+                    <div></div>
+                    <div class="d-flex justify-content-start align-items-center">
+                        <div class="custom-pr-1 font-25 lineheight-25 font-grey custom-hover">
+                            Products
+                        </div>
+                        <div class="custom-pr-1 font-25 lineheight-25 font-grey custom-hover">
+                            Solutions
+                        </div>
+                        <div class="custom-pr-1 font-25 lineheight-25 font-grey custom-hover">
+                            Pricing
+                        </div>
+                        <div class="custom-pr-1">
+                            <div
+                                class="d-flex font-family justify-content-center align-items-center custom-purple-box-dark rounded-button custom-login font-16 custom-white-button">
+                                Login
+                            </div>
+                        </div>
+                        <div class="">
+                            <div
+                                class="d-flex justify-content-center align-items-center rounded-button custom-purple-box-dark custom-get-started font-16 custom-purple-button">
+                                Get Started
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex w100p" [style.margin-top.px]="_templateHeight['navIntialHeight']"
+                [style.height.px]="_templateHeight['homeContentHeight']">
+                <div [style.width.px]="_templateHeight['homeContentWidth']-_templateHeight['circleWidth']">
+                    <div #simpleTitleRef class="custom-pl-3"><span class=" font-40 lineheight-40">
+                            We make it Super<br> Simple</span>
+                    </div>
+                    <div class="custom-pl-3 pt-2">
+                        <div class="horizontal-line"></div>
+                    </div>
+                    <div class="custom-pl-3 custom-pt-3"><img src="../../../assets/png/collect_img-video.png" alt=""
+                            [style.height.px]="_templateHeight['collectImageHeight']"
+                            [style.width.px]="_templateHeight['collectImageWidth']">
+                    </div>
+                </div>
+                <div [style.width.px]="_templateHeight['circleWidth']">
+                    <div class="custom-pl-5">
+                        <div class="d-flex">
+                            <div class=" custom-shadow cbr_primary_bg border-radius-5"
+                                [style.height.px]="_templateHeight['calHeight']"
+                                [style.width.px]="_templateHeight['collectImageWidth']">
+                                <div
+                                    class="d-flex justify-content-center custom-pt-1 align-items-start position-relaitve w100p h100p">
+                                    <div class="justify-content-center align-items-start position-relaitve w100p h100p">
+                                        <div
+                                            class=" d-flex justify-content-center align-items-center position-relaitve w100p">
+                                            <span class=" font-17  lineheight-17">
+                                                Eligibility Calculator</span>
+                                        </div>
+                                        <div class="custom-pt-2  justify-content-start align-items-start">
+                                            <div
+                                                class="custom-px-2 d-flex justify-content-start align-items-start position-relaitve w100p">
+                                                <span class=" font-15  lineheight-15">
+                                                    Monthly Income</span>
+                                            </div>
+                                            <div class="pt-2 custom-px-2">
+                                                <span class="font-20 font-weight-bold lineheight-20">
+                                                    ₹ {{_incomeValue}}</span>
+                                            </div>
+                                            <div class="custom-px-2">
+                                                <mat-slider class="example-margin" max="300000" min="100000"
+                                                    [step]="_incomeStep" [(ngModel)]="_incomeValue"
+                                                    aria-labelledby="example-name-label">
+                                                </mat-slider>
+                                                <div class="example-label-container example-label-horizontal">
+                                                    <label id="example-name-label"
+                                                        class="example-name-label custom-lightgrey">₹100000</label>
+                                                    <label id="example-name-label"
+                                                        class="example-name-label custom-lightgrey"
+                                                        style="padding-right: 8px;">₹300000</label>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="custom-px-2 custom-pt-1 d-flex justify-content-start align-items-start position-relaitve w100p">
+                                                <span class=" font-15  lineheight-15">
+                                                    Monthly Expense</span>
+                                            </div>
+                                            <div class="pt-2 custom-px-2">
+                                                <span class="font-20 font-weight-bold lineheight-20">
+                                                    ₹ {{_expenseValue}}</span>
+                                            </div>
+                                            <div class="custom-px-2">
+                                                <mat-slider class="example-margin" min="0" max="10000000"
+                                                    [step]="_expenseStep" [(ngModel)]="_expenseValue"
+                                                    aria-labelledby="example-name-label">
+                                                </mat-slider>
+                                            </div>
+                                            <div
+                                                class="custom-px-2 custom-pt-2 d-flex justify-content-start align-items-start position-relaitve w100p">
+                                                <span class=" font-15  lineheight-15">
+                                                    Repayment Tenure</span>
+                                            </div>
+                                            <div class="pt-2 custom-px-2">
+                                                <mat-form-field appearance="fill">
+                                                    <mat-select [(ngModel)]="_tenureselect">
+                                                        <mat-option value="6month">6 Months</mat-option>
+                                                        <mat-option value="1year">1 Year</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div
+                                                class="custom-px-2   d-flex justify-content-between align-items-center position-relaitve w100p">
+                                                <span class=" font-15  lineheight-15">
+                                                    Do you have any existing loans?</span>
+                                                <mat-slide-toggle></mat-slide-toggle>
+                                            </div>
+                                            <div
+                                                class="custom-px-2 custom-pt-1 d-flex justify-content-start align-items-start position-relaitve w100p">
+                                                <span class=" font-15  lineheight-15">
+                                                    EMI of existing loans (optional)</span>
+                                            </div>
+                                            <div class="custom-px-2">
+                                                <mat-form-field floatLabel='never' class="example-full-width">
+                                                    <!-- <mat-label></mat-label> -->
+                                                    <input matInput placeholder="₹15000" value="">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center"
+                                [style.height.px]="_templateHeight['calHeight']">
+                                <div class="ml-1 custom-purple-button cbr_primary_bg border-emi"
+                                    [style.height.px]="_templateHeight['emiHeight']"
+                                    [style.width.px]="_templateHeight['emiWidth']">
+                                    <div
+                                        class="d-flex justify-content-center align-items-center position-relaitve w100p h100p">
+                                        <div>
+                                            <div
+                                                class=" d-flex justify-content-center align-items-center position-relaitve w100p">
+                                                <span class=" font-12  lineheight-12">
+                                                    Loan Amount</span>
+                                            </div>
+                                            <div
+                                                class="pt-2 d-flex justify-content-center align-items-center position-relaitve w100p">
+                                                <span class=" font-25  lineheight-25">
+                                                    ₹100000</span>
+                                            </div>
+                                            <div
+                                                class="custom-pt-2 d-flex justify-content-center align-items-center position-relaitve w100p">
+                                                <span class=" font-12  lineheight-12">
+                                                    Your EMI will be</span>
+                                            </div>
+                                            <div
+                                                class="pt-2 d-flex justify-content-center align-items-center position-relaitve w100p">
+                                                <span class=" font-25  lineheight-25">
+                                                    ₹15000</span>
+                                            </div>
+                                            <div class="custom-pt-2">
+                                                <div
+                                                    class=" d-flex custom-purple-box-dark text-uppercase font-family justify-content-center align-items-center rounded-button custom-get-money font-16 custom-whitebutton">
+                                                    GET MONEY
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w100p position-absolute" [style.height.px]="_templateHeight['homeContentHeight']"
+            style="z-index: -1;">
+            <div class="w100p position-relaitve" [style.height.px]="_templateHeight['accountDotsHeight']">
+                <div class="position-relaitve d-flex justify-content-end">
+                    <img src="../../../assets/png/accounting_dots.png" alt=""
+                        class="position-relative custom-img-sol_wave_bg"
+                        [style.height.px]="_templateHeight['accountDotsHeight']"
+                        [style.width.px]="_templateHeight['blobSmallWidth']">
+                </div>
+            </div>
+            <div class="w100p position-relaitve"
+                [style.height.px]="_templateHeight['homeContentHeight'] - _templateHeight['accountDotsHeight']">
+                <div class="position-relaitve d-flex align-items-end"
+                    [style.height.px]="_templateHeight['homeContentHeight'] - _templateHeight['accountDotsHeight']">
+                    <img src="../../../assets/png/sol_wave_bg.png" alt="" class="position-relative"
+                        [style.height.px]="_templateHeight['homeContentHeight'] - _templateHeight['accountDotsHeight'] - 150"
+                        [style.width.px]="_templateHeight['homeContentWidth']">
+                </div>
+            </div>
+        </div>
+        <div #bottomRef class="d-flex justify-content-start w100p position-relative"
+            [style.height.px]="_templateHeight['homeContentHeight'] + _templateHeight['navIntialHeight'] + 130">
+            <div class="d-flex w100p"
+                [style.height.px]="_templateHeight['homeContentHeight'] + _templateHeight['navIntialHeight'] + 130">
+                <div #tileRef class="custom-pl-4" [style.margin-top.px]="_templateHeight['navIntialHeight'] - 50"
+                    [style.width.px]="_templateHeight['circleWidth'] - 140">
+                    <div class="">
+                        <div class="d-flex">
+                            <div>
+                                <div class="" [style.height.px]="_templateHeight['homeContentHeight'] +30 "
+                                    [style.width.px]="_templateHeight['tilesWidth']">
+                                    <div class="pl-3 custom-shadow mt-4 cbr_primary_bg border-radius-5 custom-purple-box"
+                                        [style.height.px]="_templateHeight['tilesHeight']"
+                                        [style.width.px]="_templateHeight['tilesWidth']">
+                                        <div class="position-relaitve " style="height:50%">
+                                            <img src="../../../assets/png/get-paid-nstantly.png" alt=""
+                                                class="position-relative mt-3">
+                                        </div>
+                                        <div class="position-relaitve font-weight-bold" style="height:10%">
+                                            Quick cash disbursement
+                                        </div>
+                                        <div class="pt-2 position-relaitve font-15" style="height:40%">
+                                            Get terms loans hat your business needs within 72 hrs
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 custom-shadow mt-4 cbr_primary_bg border-radius-5 custom-purple-box"
+                                        [style.height.px]="_templateHeight['tilesHeight']"
+                                        [style.width.px]="_templateHeight['tilesWidth']">
+                                        <div class="position-relaitve " style="height:50%">
+                                            <img src="../../../assets/png/low-interest-rate.png" alt=""
+                                                class="position-relative mt-3">
+                                        </div>
+                                        <div class="position-relaitve font-weight-bold" style="height:10%">
+                                            Low-interest rate
+                                        </div>
+                                        <div class="pt-2 position-relaitve font-15 " style="height:30%">
+                                            Achieve your financial goals with an interest rate starting at 13% per annum
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 custom-shadow mt-4 cbr_primary_bg border-radius-5 custom-purple-box"
+                                        [style.height.px]="_templateHeight['tilesHeight']"
+                                        [style.width.px]="_templateHeight['tilesWidth']">
+                                        <div class="position-relaitve " style="height:50%">
+                                            <img src="../../../assets/png/secure-payments.png" alt=""
+                                                class="position-relative mt-3">
+                                        </div>
+                                        <div class="position-relaitve font-weight-bold" style="height:10%">
+                                            Zero Paperwork
+                                        </div>
+                                        <div class="pt-2 position-relaitve font-15" style="height:30%">
+                                            Get started instantly by submitting only your basic details & bank
+                                            statements
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center"
+                                [style.height.px]="_templateHeight['homeContentHeight'] + 130 ">
+                                <div class="d-flex align-items-center ml-4"
+                                    [style.height.px]="_templateHeight['homeContentHeight'] +30 "
+                                    [style.width.px]="_templateHeight['tilesWidth'] ">
+                                    <div>
+                                        <div class="pl-3 custom-shadow mt-4 cbr_primary_bg border-radius-5 custom-purple-box"
+                                            [style.height.px]="_templateHeight['tilesHeight']"
+                                            [style.width.px]="_templateHeight['tilesWidth']"
+                                            style="background: transparent url('../../../assets/png/tile-bg.png') 0% 0% no-repeat padding-box;">
+                                            <div class="position-relaitve " style="height:50%">
+                                                <img src="../../../assets/png/freelancer_feature.png" alt=""
+                                                    class="position-relative mt-3">
+                                            </div>
+                                            <div class="position-relaitve font-weight-bold" style="height:10%">
+                                                Ace your business finances
+                                            </div>
+                                            <div class="pt-2 position-relaitve font-15 " style="height:40%">
+                                                Manage bankingaccounting & everything in between on one platform
+                                            </div>
+                                        </div>
+                                        <div class="pl-3 custom-shadow mt-4 cbr_primary_bg border-radius-5 custom-purple-box"
+                                            [style.height.px]="_templateHeight['tilesHeight']"
+                                            [style.width.px]="_templateHeight['tilesWidth']">
+                                            <div class="position-relaitve " style="height:50%">
+                                                <img src="../../../assets/png/covid.png" alt=""
+                                                    class="position-relative mt-3">
+                                            </div>
+                                            <div class="position-relaitve font-weight-bold" style="height:10%">
+                                                Loans to fight COVID-19
+                                            </div>
+                                            <div class="pt-2 position-relaitve font-15" style="height:40%">
+                                                Zero EMI for first 3 months on Back-to-Business of upto 1 lakh
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center custom-pl-3"
+                    [style.width.px]="_templateHeight['bottomRightWidth']"
+                    [style.margin-top.px]="_templateHeight['navIntialHeight'] - 20">
+                    <div>
+                        <div class="custom-pl-3"><span class=" font-40 lineheight-40">
+                                Boost your business with<br> Open</span>
+                        </div>
+                        <div class="custom-pl-3 custom-pt-3">
+                            <div class="horizontal-line"></div>
+                        </div>
+                        <div class="custom-pl-3 custom-pt-3"><span class="custom-lightgrey font-17 lineheight-17">
+                                Get your hands on a term loan that's<br>crafted for your business</span>
+                        </div>
+                        <div class="custom-pl-3 custom-pt-3">
+                            <div
+                                class="d-flex font-family justify-content-center align-items-center custom-purple-box-dark rounded-button custom-open-account font-18 custom-white-button">
+                                Get an Open account
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
