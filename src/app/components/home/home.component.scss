@@ -1,4 +1,7 @@
 :host {
+    .pt-2-custom{
+        padding-top: 2em !important;
+      }
     ::ng-deep {
         .mat-accent .mat-slider-track-fill,
         .mat-accent .mat-slider-thumb,
@@ -7,13 +10,13 @@
         }
 
         .mat-accent .mat-slider-thumb {
-            height: 20px;
-            width: 20px;
+            height: 1px;
+            width: 1px;
             background-color: #663399 !important;
-            border: 5px solid #ffffff !important;
+            border: 0.05px solid #ffffff !important;
             box-shadow: 0px 4px 7px #00000029;
-            bottom: -10px;
-            right: -10px;
+            bottom: -0.5px;
+            right: -0.5px;
         }
         .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
             height: 20px;
@@ -91,6 +94,9 @@
 
         .mat-form-field-label {
             font-size: 20px !important;
+        }
+        .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+            background-color: #ffffff!important;
         }
     }
 }
